@@ -1,0 +1,105 @@
+\documentclass{ximera}
+\title{The Second Activity}
+\author{malgorzata}
+
+\begin{document}
+\begin{abstract}
+ Introduction to surface integrals with a discussion when a surface integral is positive, negative or $0$
+\end{abstract}
+
+
+\maketitle
+
+Prerequisites: vector fields, Surface parametrization, tangent and normal vectors to a surface
+
+
+Let the surface $S$ be parametrized by $r(u,v)$ with $(u,v)\in D\subset \mathbb {R}^2$
+Surface integral
+\[
+\int_{S}F\cdot dS=\int\int_{D}F(r(u,v))\cdot (r_u\times r_v)dA
+\]
+
+has an interpretation similar in flavor to the line integral.
+There are few examples of the calculations:
+
+\begin{example}
+Evaluate 
+\[
+\int_{S}F\cdot dS
+\]
+where $S$ the part of the paraboloid $z=4-x^2-y^2$ that lies above the plane $z=0$ and $F=\left<0,0,1\right>$
+
+Solution: 
+The parametrization of $S$ can be written as 
+\[
+r(u,v)=\left<u\cos v,u \sin v,4-u^2\right>
+\]
+with $u\in(0,2) $ and $v\in (0,2\pi)$. Then 
+\[
+r_u=\left<\cos v,\sin v,-2u\right>
+\]
+and 
+\[
+r_v=\left<-u \sin v,u\cos v,0\right>,
+\]
+and
+\[
+r_u\times r_v=\left<-2u^2\cos v ,-2u^2\sin v ,u \right>
+\]
+Since $F(x,y,z)=<0,0,1>$ is a constant vector field, evaluating it at the surface $S$ does not bring any changes, thus $F(r(u,v))=<0,0,1>$. Then
+\[
+F(r(u,v))\cdot (r_u\times r_v)=<0,0,1>\cdot \left<-2u^2\cos v ,-2u^2\sin v ,u \right>=u
+\]
+and 
+\[
+\int_{S}F\cdot dS=\int\int_{D}F(r(u,v))\cdot (r_u\times r_v)=\int\int_{D}udA
+\]
+Using the boundaries from the parametrization of $S$:
+\[
+\int\int_{D}udA=\int^{2 \pi}_{0}\int^{2}_{0}ududv=\int^{2\pi}_{0}\int^{2}_{0}ududv=\int^{2\pi}_{0}\frac{u^2}{2}\bigg{|}^{2}_{0}dv=4\pi
+\]
+\end{example}
+
+\begin{problem}
+Evaluate 
+\[
+\int_{S}F\cdot dS
+\]
+where $S$ the part of the paraboloid $z=x^2+y^2$ that lies below the plane $z=4$ and $F=\left<x,y,0\right>$
+
+Solution: 
+The parametrization of $S$ can be written as 
+\[
+r(u,v)=\answer{\left<u\cos v,u \sin v,u^2\right>}
+\]
+with $u\in(0,2) $ and $v\in (0,2\pi)$. Then 
+\[
+r_u=\answer{\left<\cos v,\sin v,2u\right>}
+\]
+and 
+\[
+r_v=\answer{\left<-u \sin v,u\cos v,0\right>},
+\]
+and
+\[
+r_u\times r_v=\answer{\left<2u^2\cos v ,2u^2\sin v ,u \right>}
+\]
+Since $F(x,y,z)=<x,y,0>$ then $F(r(u,v))=\answer{<u\cos v,u \sin v,0>}$. Then
+\[
+F(r(u,v))\cdot (r_u\times r_v)=\answer{2u^3}
+\]
+and 
+\[
+\int_{S}F\cdot dS=\int\int_{D}F(r(u,v))\cdot (r_u\times r_v)=\int\int_{D}\answer{2u^3}dA
+\]
+Using the boundaries from the parametrization of $S$:
+\[
+\int\int_{D}\answer{2u^3}dA=\int^{2 \pi}_{0}\int^{2}_{0}\answer{2u^3}dudv=\int^{2\pi}_{0}\frac{u^4}{2}\bigg{|}^{2}_{0}dv=16\pi
+\]
+\end{problem}
+Expression $F(r(u,v))$ indicates that the vector field is taken on the surface $S$. Vectors $r_u$ and $r_v $ are tangent to $S$ thus their cross product $r_u\times r_v$ indicates the normal direction to surface $S$. The dot product $F(r(u,v))\cdot (r_u\times r_v)$ can be seen as 
+\[
+F(r(u,v))\cdot (r_u\times r_v)=|F(r(u,v))| |(r_u\times r_v)|\cos\alpha,
+\]
+thus the sign of the integral depends on the angle between the vector field $F$ evaluated on $S$ and the normal vectors to $S$. 
+\end{document}
