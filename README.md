@@ -1,1 +1,2 @@
 # anExampleCourse
+# theSecondActivity
